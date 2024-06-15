@@ -7,6 +7,7 @@ with shelve.open("countries") as db:
     
     if userChoice == "all":
         for country_data in countries_gdp:
+            
             country = country_data['country']
             gdp = country_data['gdp']
             unemployment = country_data["unemployment"]
