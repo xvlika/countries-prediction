@@ -1,3 +1,7 @@
+# Country Prediction
+
+Country prediction program to make prediction about Gross Domestic Product(GDP) growth rates, population trends, and other economic metrics.
+
 # Country Prediction Factors
 
 Our prediction model is based on the following factors:
