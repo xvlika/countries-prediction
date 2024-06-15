@@ -1,8 +1,11 @@
-our prediction is based on this factors in country:
-1.inflation
-2.employment rate
-3.tax politics
-4.trade balance(export and import rate)
-6.investment
-7.population growth
-8.exchange rate
+# Country Prediction Factors
+
+Our prediction model is based on the following factors:
+
+1. **Inflation**
+2. **Employment Rate**
+3. **Tax Policies**
+4. **Trade Balance** (Export and Import Rates)
+5. **Investment**
+6. **Population Growth**
+7. **Exchange Rate**
