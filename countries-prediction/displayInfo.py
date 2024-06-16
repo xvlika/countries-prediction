@@ -1,29 +1,29 @@
 import shelve
 import math
+from countries_info import Country, countries_data
 
 def display_current():
+    with shelve.open("countries_info") as db:
+        countries_data = db('countries_data',[])
     while True:
         userChoice = input("Enter which country info you want to see (if you want all enter: all, to quit enter: -1): ").lower()
         
         if userChoice == "-1":
             print("Exiting the program.")
             break
-        
-        with shelve.open("countries") as db:
-            countries_gdp = db['countries_gdp']
-            
+        else:
             if userChoice == "all":
-                for country_data in countries_gdp:
+                for country_data in countries_data:
                     country = country_data['country']
                     gdp = country_data['gdp']
-                    gdp_growth = country_data['gdp_growth_rate']
-                    unemployment = country_data["unemployment"]
-                    inflation = country_data["inflation"]
-                    tax = country_data["tax_percentage"]
-                    trade = country_data["trade_balance"]
+                    gdp_growth_rate = country_data['gdp_growth_rate']
+                    unemployment = country_data['unemployment']
+                    inflation = country_data['inflation']
+                    tax = country_data['tax_percentage']
+                    trade = country_data['trade_balance']
                     investment_rate = country_data['investment_rate']
-                    population_growth = country_data["population_growth"]
-                    exchange_rate = country_data["exchange_rate"]
+                    population_growth = country_data['population_growth']
+                    exchange_rate = country_data['exchange_rate']
 
                     print(f"{'='*40}")
                     print(f"Country:           {country}")
@@ -43,7 +43,7 @@ def display_current():
                 for choice in choices:
                     choice = choice.strip()
                     found = False
-                    for country_data in countries_gdp:
+                    for country_data in countries_data:
                         country = country_data['country'].lower()
                         if choice == country:
                             gdp = country_data['gdp']
